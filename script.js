@@ -14,14 +14,3 @@ enterBtn.addEventListener('click', () => {
   audio.play();
 });
 
-const instaBtn = document.getElementById('insta-btn');
-const instaPopup = document.getElementById('insta-popup');
-const closePopup = document.getElementById('close-popup');
-
-instaBtn.addEventListener('click', () => {
-  instaPopup.classList.add('active');
-});
-
-closePopup.addEventListener('click', () => {
-  instaPopup.classList.remove('active');
-});
