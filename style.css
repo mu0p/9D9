@@ -1,6 +1,4 @@
-/* === style.css === */
 
-/* Reset & Base */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,7 +7,6 @@ body, html {
   overflow-x: hidden;
 }
 
-/* HERO */
 #hero {
   position: relative;
   height: 100vh;
@@ -25,7 +22,6 @@ body, html {
   z-index: -1;
 }
 
-/* ENTER OVERLAY */
 #enter-overlay {
   position: absolute;
   top: 0;
@@ -55,7 +51,6 @@ body, html {
   color: black;
 }
 
-/* MAIN CONTENT */
 #main-content {
   position: absolute;
   top: 50%;
@@ -110,15 +105,28 @@ body, html {
 .btn:hover {
   background: rgba(255,255,255,0.2);
 }
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1001;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
 
-/* ABOUT OVERLAY */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,28 +139,14 @@ body, html {
   display: none;
 }
 
-/* CLOSE BUTTON */
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-}
 
-/* MANIFESTO TEXT */
 .overlay .about-copy {
   max-width: 700px;
   color: white;
   line-height: 1.8;
 }
 
-/* SCROLL ARROW BOUNCE */
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
