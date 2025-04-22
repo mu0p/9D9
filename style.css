@@ -31,7 +31,7 @@ body, html {
 }
 
 #enter-btn {
-  font-family: 'Zen Dots', sans-serif;
+  font-family: 'Saira', sans-serif;
   font-size: 2rem;
   padding: 1rem 2rem;
   background: none;
@@ -59,10 +59,20 @@ body, html {
   display: none;
 }
 
-#main-content h1,
-#main-content h2 {
+#main-content .tagline {
   font-family: 'Zen Dots', sans-serif;
-  margin: 0.5em 0;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+  margin-bottom: 0.5em;
+}
+
+#main-content .logo {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin: 0.5em auto;
 }
 
 #main-content p {
@@ -71,23 +81,7 @@ body, html {
   line-height: 1.6;
 }
 
-#main-content .tagline {
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 1rem;    /* smaller, subtle */
-  letter-spacing: 0.1em;
-  opacity: 0.75;
-  margin-bottom: 0.5em;
-}
-
-#main-content .logo {
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 4rem;    /* or tweak as you like */
-  margin: 0.2em 0;
-}
-.hidden {
-  display: none;
-}
-
+/* Optional fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
