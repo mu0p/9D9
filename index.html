@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>9D9</title>
   <link rel="icon" href="images/mu0p_favicon.ico" />
   <link
     href="https://fonts.googleapis.com/css2?family=Zen+Dots&family=Saira:wght@300;400;600&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- HERO -->
   <section id="hero">
     <video autoplay muted loop playsinline id="bg-video">
       <source src="images/9d9_Background.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
     </video>
 
     <div id="enter-overlay">
@@ -29,31 +30,27 @@
       <p>ROOTED IN THE DEEP FOG AND DREAMY ATMOSPHERE</p>
       <p>OF '90S WAREHOUSE CULTURE.</p>
 
-      <a href="https://www.instagram.com/reel/DHry0wqPi2B/"
-        target="_blank"
-        rel="noopener"
-        class="insta-btn">watch trailer</a>
-      <a href="#about" class="scroll-down">↓ LEARN MORE</a>
+      <div class="button-group">
+        <button id="watch-btn" class="btn">WATCH TRAILER</button>
+        <button id="learn-btn" class="btn">LEARN MORE</button>
+        <button id="tickets-btn" class="btn">BUY TICKETS</button>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT / Manifesto -->
-  <section id="about">
-    <h2 class="about-heading">SO, WHO REALLY MATTERS MOST IN THE CLUB?</h2>
-    <p class="about-lead">I’LL TELL YOU, IT’S YOU. THE COMMUNITY. THE PEOPLE.</p>
-
+  <!-- Manifesto Overlay -->
+  <div id="about-overlay" class="overlay hidden">
+    <button id="close-about" class="close-btn">&times;</button>
     <div class="about-copy">
+      <h2>SO, WHO REALLY MATTERS MOST IN THE CLUB?</h2>
+      <p>I’LL TELL YOU, IT’S YOU. THE COMMUNITY. THE PEOPLE.</p>
       <p>IT’S TIME TO GIVE THE CLUB BACK TO THOSE WHO MAKE IT MAGIC. THE DANCERS, THE DREAMERS, THE BEAUTIFUL ONES WHO’VE ALWAYS MADE THE CLUB A COMMUNITY.</p>
-
       <p>SO, I’M REMOVING THE DJ FROM THE STAGE, HELL, FROM THE WHOLE ROOM. THEY’LL BE HIDDEN, ABLE TO MONITOR THE DANCE FLOOR, BUT YOU WON’T BE ABLE TO MONITOR THEM. THEY SAY, “NOBODY PUTS DJ IN A CORNER.” WELL, IN THE 70S, THEY DID, AND I WILL. BECAUSE AFTER 18 YEARS OF DJING, I REALLY DON’T THINK YOU NEED TO BE LOOKING AT ME. ALSO DON’T THINK YOU NEED TO BE LOOKING AT YOUR PHONE EITHER. THERE WILL BE A STRICT NO PHONES ON THE DANCEFLOOR, ONLY IN THE LOUNGE. THIS IS ALSO WHY HAVING 2 ROOMS IS VERY CRUCIAL—WHEN YOU WANT TO TAKE A BREAK AND GRAB ANOTHER DRINK, YOU CAN GO OVER TO THE LOUNGE AND DO THAT. THE DANCEFLOOR HAS NO BARS, NO STAGE, NO PARKING.</p>
-
       <p>YOU ARE HERE TO GET TO KNOW YOURSELF, TO GET TO KNOW YOUR COMMUNITY. TO EXPRESS YOURSELF, TO MOVE YOURSELF, TO LOSE YOURSELF IN THE BEAT. FIND A DARK CORNER OR A LIT‑UP CENTER, IT’S UP TO YOU, BUT WHATEVER YOU DO, DANCE.</p>
-
       <p>THIS IS ABOUT BRINGING THE DANCEFLOOR BACK TO THE PEOPLE.</p>
-      
       <p>EXPECT A BRAND NEW DANCEFLOOR CONCEPT BROUGHT TO YOU BY A 20+ YEAR VETERAN LIGHTING DESIGNER, AND A SURROUND SOUND TO KEEP YOU MOVING NO MATTER WHERE YOU ARE ON THE DANCEFLOOR.</p>
     </div>
-  </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
