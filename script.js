@@ -2,15 +2,11 @@ const enterBtn = document.getElementById('enter-btn');
 const overlay = document.getElementById('enter-overlay');
 const content = document.getElementById('main-content');
 
+document.body.style.overflow = 'hidden';
+
 enterBtn.addEventListener('click', () => {
-  // Remove overlay
   overlay.style.display = 'none';
-
-  // Show main content
   content.style.display = 'block';
-
-  // Play audio
-  const audio = new Audio('images/9d9_Audio.wav');
-  audio.play();
+  document.body.style.overflow = 'auto'; 
+  new Audio('images/9d9_Audio.wav').play();
 });
-
