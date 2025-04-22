@@ -1,6 +1,9 @@
+/* === style.css === */
+
 /* Reset & Base */
 body, html {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   font-family: 'Saira', sans-serif;
   color: white;
   overflow-x: hidden;
@@ -13,83 +16,156 @@ body, html {
   overflow: hidden;
 }
 #hero video#bg-video {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
 }
 
 /* ENTER OVERLAY */
 #enter-overlay {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.9);
-  display: flex; justify-content: center; align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 999;
 }
+
 #enter-btn {
-  font-size: 2rem; padding: 1rem 2rem;
-  background: none; color: white;
-  border: 2px solid white; cursor: pointer;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background: none;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
   text-shadow: 0 0 10px rgba(255,255,255,0.7);
   transition: background 0.3s, color 0.3s;
 }
+
 #enter-btn:hover {
-  background: white; color: black;
+  background: white;
+  color: black;
 }
 
 /* MAIN CONTENT */
 #main-content {
-  position: absolute; top: 50%; left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; width: 90vw; max-width: 600px;
-  z-index: 2; display: none;
+  text-align: center;
+  width: 90vw;
+  max-width: 600px;
+  z-index: 2;
+  display: none;
 }
+
 #main-content .tagline {
   font-family: 'Zen Dots', sans-serif;
-  font-size: 1rem; letter-spacing: 0.1em; opacity: 0.75;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
   margin-bottom: 0.5em;
 }
+
 #main-content .logo {
-  display: block; width: 80%; max-width: 400px;
-  height: auto; margin: 0.5em auto;
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin: 0.5em auto;
 }
+
 #main-content p {
-  margin: 0.3em 0; line-height: 1.6;
+  margin: 0.3em 0;
+  line-height: 1.6;
 }
 
 /* BUTTON GROUP */
 .button-group {
-  display: flex; gap: 1rem; justify-content: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
   margin-top: 1.5rem;
 }
+
 .btn {
-  font-size: 1.25rem; padding: 0.75rem 1.5rem;
-  border: 2px solid white; background: transparent;
-  color: white; cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: rgba(255,255,255,0.2);
 }
 
 /* ABOUT OVERLAY */
 .overlay {
-  position: fixed; top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.9);
-  display: flex; justify-content: center; align-items: center;
-  padding: 2rem; overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow-y: auto;
   z-index: 1000;
 }
+
 .overlay.hidden {
   display: none;
 }
+
+/* CLOSE BUTTON */
 .close-btn {
-  position: absolute; top: 1rem; right: 1rem;
-  background: none; border: none; font-size: 2rem;
-  color: white; cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
+
+/* MANIFESTO TEXT */
 .overlay .about-copy {
-  max-width: 700px; color: white; line-height: 1.8;
+  max-width: 700px;
+  color: white;
+  line-height: 1.8;
+}
+
+/* SCROLL ARROW BOUNCE */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.scroll-down {
+  font-family: 'Zen Dots', sans-serif;
+  font-size: 2rem;
+  color: white;
+  animation: bounce 2s infinite;
+  text-decoration: none;
 }
