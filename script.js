@@ -30,5 +30,5 @@ document.getElementById('close-about').addEventListener('click', () => {
 
 // BUY TICKETS
 document.getElementById('tickets-btn').addEventListener('click', () => {
-  window.open('https://your-ticket-link.com', '_blank','noopener');
+  window.open('https://ra.co/events/2155391', '_blank','noopener');
 });
