@@ -86,16 +86,15 @@ body, html {
   line-height: 1.6;
   margin: 0.5em 0;
 }
-
-.insta-btn,
-.scroll-down {
-  font-family: 'Saira', sans-serif;
-  text-decoration: none;
-  display: inline-block;
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
   margin-top: 1.5rem;
 }
 
-.insta-btn {
+.btn {
+  font-family: 'Saira', sans-serif;
   font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
   border: 2px solid white;
@@ -104,21 +103,44 @@ body, html {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
-.insta-btn:hover {
+.btn:hover {
   background: rgba(255,255,255,0.2);
 }
 
-.scroll-down {
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 2rem;
-  color: white;
-  animation: bounce 2s infinite;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.overlay.hidden {
+  display: none;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+.overlay .about-copy {
+  max-width: 700px;
+  color: white;
+  line-height: 1.8;
 }
 
 #about {
