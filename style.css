@@ -9,56 +9,138 @@ body, html {
   overflow-x: hidden;
 }
 
-/* HERO */
-/* ABOUT OVERLAY */
-.overlay {
-  position: fixed;
+/* HERO SECTION */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#bg-video {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;          /* include padding */
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ENTER OVERLAY */
+#enter-overlay {
+  position: absolute;
+  inset: 0;
   background: rgba(0,0,0,0.9);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;   /* align at top instead of center */
-  align-items: center;
-  padding: 2rem 1rem;            /* top and bottom padding, horizontal reduced */
-  overflow-y: auto;
-  box-sizing: border-box;
-  z-index: 1000;
-} */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;          /* use % instead of vw to include padding */
-  height: 100vh;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  z-index: 999;
+}
+#enter-btn {
+  font-family: 'Saira', sans-serif;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background: none;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+#enter-btn:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.6);
+}
+
+/* MAIN CONTENT */
+#main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90vw;
+  max-width: 600px;
+  z-index: 2;
+  display: none;
+}
+#main-content .tagline {
+  font-family: 'Zen Dots', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+  margin-bottom: 0.5em;
+}
+#main-content .logo {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin: 0.5em auto;
+}
+#main-content p {
+  margin: 0.3em 0;
+  line-height: 1.6;
+}
+
+/* BUTTON GROUP */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: 'Saira', sans-serif;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 4px rgba(255,255,255,0.7);
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+  box-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.6);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn:hover::before {
+  left: 200%;
+}
+
+/* MANIFESTO OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
   overflow-y: auto;
-  /* prevent horizontal overflow */
+  padding: 2rem 1rem;
   box-sizing: border-box;
   z-index: 1000;
 }
-
 .overlay.hidden {
   display: none;
 }
-
-/* MANIFESTO TEXT */
 .overlay .about-copy {
-  max-width: 90vw;      /* fit to viewport width */
+  max-width: 90vw;
   color: white;
   line-height: 1.8;
   text-align: center;
-  box-sizing: border-box;
 }
-
-/* CLOSE BUTTON */
 .close-btn {
   margin-top: 2rem;
   display: block;
@@ -72,33 +154,36 @@ body, html {
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(0,0,0,0.5);
   text-align: center;
-  box-sizing: border-box;
 }
 
-/* SCROLL ARROW BOUNCE */ BOUNCE */
+/* SCROLL ARROW BOUNCE */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-
 .scroll-down {
   font-family: 'Zen Dots', sans-serif;
   font-size: 2rem;
   color: white;
   animation: bounce 2s infinite;
   text-decoration: none;
+  margin-top: 1.5rem;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* RESPONSIVE */
 @media (max-width: 480px) {
   #main-content {
     width: 95vw;
-    transform: translate(-50%, -50%);
   }
-  #main-content .tagline { font-size: 0.9rem; }
-  #main-content p { font-size: 0.9rem; }
+  #main-content .tagline {
+    font-size: 0.9rem;
+  }
+  #main-content p {
+    font-size: 0.9rem;
+  }
   #main-content .logo {
-    width: 90%; max-width: 250px;
+    width: 90%;
+    max-width: 250px;
   }
   .button-group {
     gap: 0.75rem;
@@ -107,13 +192,14 @@ body, html {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
-  .scroll-down { font-size: 1.5rem; }
-  .overlay .about-copy { padding: 0 1rem; }
-  .overlay .about-copy h2 { font-size: 1.5rem; }
-  .overlay .about-copy p { font-size: 0.9rem; }
+  .scroll-down {
+    font-size: 1.5rem;
+  }
+  .overlay .about-copy {
+    padding: 0 1rem;
+  }
   .close-btn {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
   }
 }
-
