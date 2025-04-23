@@ -105,20 +105,6 @@ body, html {
 .btn:hover {
   background: rgba(255,255,255,0.2);
 }
-.close-btn {
-  position: static;  
-  display: block; 
-  margin: 2rem auto 0;    
-  padding: 0.75rem 1.5rem; 
-  background: white;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 0 6px rgba(0,0,0,0.5);
-  text-align: center;
-}
 
 .overlay {
   position: fixed;
@@ -126,10 +112,11 @@ body, html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.7);
-  flex-direction: column;    
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;      
+  align-items: center;
   padding: 2rem;
   overflow-y: auto;
   z-index: 1000;
@@ -137,6 +124,20 @@ body, html {
 
 .overlay.hidden {
   display: none;
+}
+
+.close-btn {
+  margin-top: 2rem;
+  display: block;
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  text-align: center;
 }
 
 
@@ -148,12 +149,8 @@ body, html {
 
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .scroll-down {
@@ -162,4 +159,46 @@ body, html {
   color: white;
   animation: bounce 2s infinite;
   text-decoration: none;
+}
+
+
+@media (max-width: 480px) {
+  #main-content {
+    width: 95vw;
+    transform: translate(-50%, -50%);
+  }
+  #main-content .tagline {
+    font-size: 0.9rem;
+  }
+  #main-content p {
+    font-size: 0.9rem;
+  }
+  #main-content .logo {
+    width: 90%;
+    max-width: 250px;
+  }
+  .button-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .scroll-down {
+    font-size: 1.5rem;
+  }
+  .overlay .about-copy {
+    padding: 0 1rem;
+  }
+  .overlay .about-copy h2 {
+    font-size: 1.5rem;
+  }
+  .overlay .about-copy p {
+    font-size: 0.9rem;
+  }
+  .close-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
 }
