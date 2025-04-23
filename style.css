@@ -1,4 +1,6 @@
+/* === style.css === */
 
+/* Reset & Base */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,134 +9,29 @@ body, html {
   overflow-x: hidden;
 }
 
-#hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-#hero video#bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-#enter-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-#enter-btn {
-  font-family: 'Saira', sans-serif;
-  font-size: 2rem;
-  padding: 1rem 2rem;
-  background: none;
-  color: white;
-  border: 2px solid white;
-  cursor: pointer;
-  text-shadow: 0 0 10px rgba(255,255,255,0.7);
-  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-}
-
-#enter-btn:hover {
-  background: white;
-  color: black;
-  box-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.6);
-}
-
-#main-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 90vw;
-  max-width: 600px;
-  z-index: 2;
-  display: none;
-}
-
-#main-content .tagline {
-  font-family: 'Zen Dots', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  opacity: 0.75;
-  margin-bottom: 0.5em;
-}
-
-#main-content .logo {
-  display: block;
-  width: 80%;
-  max-width: 400px;
-  height: auto;
-  margin: 0.5em auto;
-}
-
-#main-content p {
-  margin: 0.3em 0;
-  line-height: 1.6;
-}
-
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.btn {
-  font-family: 'Saira', sans-serif;
-  font-size: 1.25rem;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid white;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  text-shadow: 0 0 4px rgba(255,255,255,0.7);
-  transition: box-shadow 0.3s ease, color 0.3s ease;
-}
-
-.btn:hover {
-  box-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.6);
-}
-
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  transform: skewX(-20deg);
-  transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-  left: 200%;
-}
-
-
+/* HERO */
+/* ABOUT OVERLAY */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;    
+  width: 100%;          /* include padding */
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* align at top instead of center */
+  align-items: center;
+  padding: 2rem 1rem;            /* top and bottom padding, horizontal reduced */
+  overflow-y: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+} */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;          /* use % instead of vw to include padding */
   height: 100vh;
   background: rgba(0,0,0,0.9);
   display: flex;
@@ -152,16 +49,16 @@ body, html {
   display: none;
 }
 
-
+/* MANIFESTO TEXT */
 .overlay .about-copy {
-  max-width: 90vw;     
+  max-width: 90vw;      /* fit to viewport width */
   color: white;
   line-height: 1.8;
   text-align: center;
   box-sizing: border-box;
 }
 
-
+/* CLOSE BUTTON */
 .close-btn {
   margin-top: 2rem;
   display: block;
@@ -178,7 +75,7 @@ body, html {
   box-sizing: border-box;
 }
 
-
+/* SCROLL ARROW BOUNCE */ BOUNCE */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -192,7 +89,7 @@ body, html {
   text-decoration: none;
 }
 
-
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 480px) {
   #main-content {
     width: 95vw;
