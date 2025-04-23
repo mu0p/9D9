@@ -7,6 +7,7 @@ body, html {
   overflow-x: hidden;
 }
 
+
 #hero {
   position: relative;
   height: 100vh;
@@ -36,6 +37,7 @@ body, html {
 }
 
 #enter-btn {
+  font-family: 'Saira', sans-serif;
   font-size: 2rem;
   padding: 1rem 2rem;
   background: none;
@@ -43,13 +45,15 @@ body, html {
   border: 2px solid white;
   cursor: pointer;
   text-shadow: 0 0 10px rgba(255,255,255,0.7);
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 #enter-btn:hover {
   background: white;
   color: black;
+  box-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.6);
 }
+
 
 #main-content {
   position: absolute;
@@ -84,26 +88,47 @@ body, html {
   line-height: 1.6;
 }
 
-/* BUTTON GROUP */
+
 .button-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   margin-top: 1.5rem;
 }
 
 .btn {
+  font-family: 'Saira', sans-serif;
   font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
   border: 2px solid white;
   background: transparent;
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 4px rgba(255,255,255,0.7);
+  transition: box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
+  box-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.6);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 200%;
 }
 
 .overlay {
@@ -133,6 +158,7 @@ body, html {
   color: black;
   border: none;
   padding: 0.75rem 1.5rem;
+  font-family: 'Saira', sans-serif;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
@@ -140,13 +166,12 @@ body, html {
   text-align: center;
 }
 
-
 .overlay .about-copy {
   max-width: 700px;
   color: white;
   line-height: 1.8;
+  text-align: center;
 }
-
 
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
@@ -161,44 +186,30 @@ body, html {
   text-decoration: none;
 }
 
-
 @media (max-width: 480px) {
   #main-content {
     width: 95vw;
     transform: translate(-50%, -50%);
   }
-  #main-content .tagline {
-    font-size: 0.9rem;
-  }
-  #main-content p {
-    font-size: 0.9rem;
-  }
+  #main-content .tagline { font-size: 0.9rem; }
+  #main-content p { font-size: 0.9rem; }
   #main-content .logo {
-    width: 90%;
-    max-width: 250px;
+    width: 90%; max-width: 250px;
   }
   .button-group {
-    flex-direction: column;
     gap: 0.75rem;
   }
   .btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
-  .scroll-down {
-    font-size: 1.5rem;
-  }
-  .overlay .about-copy {
-    padding: 0 1rem;
-  }
-  .overlay .about-copy h2 {
-    font-size: 1.5rem;
-  }
-  .overlay .about-copy p {
-    font-size: 0.9rem;
-  }
+  .scroll-down { font-size: 1.5rem; }
+  .overlay .about-copy { padding: 0 1rem; }
+  .overlay .about-copy h2 { font-size: 1.5rem; }
+  .overlay .about-copy p { font-size: 0.9rem; }
   .close-btn {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
   }
 }
+
