@@ -6,7 +6,6 @@ body, html {
   color: white;
   overflow-x: hidden;
 }
- 
 
 #hero {
   position: relative;
@@ -54,7 +53,6 @@ body, html {
   box-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.6);
 }
 
-
 #main-content {
   position: absolute;
   top: 50%;
@@ -88,7 +86,6 @@ body, html {
   line-height: 1.6;
 }
 
-
 .button-group {
   display: flex;
   flex-wrap: wrap;
@@ -115,6 +112,7 @@ body, html {
   box-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 16px rgba(255,255,255,0.6);
 }
 
+
 .btn::before {
   content: '';
   position: absolute;
@@ -131,11 +129,12 @@ body, html {
   left: 200%;
 }
 
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;    
   height: 100vh;
   background: rgba(0,0,0,0.9);
   display: flex;
@@ -144,12 +143,24 @@ body, html {
   align-items: center;
   padding: 2rem;
   overflow-y: auto;
+  /* prevent horizontal overflow */
+  box-sizing: border-box;
   z-index: 1000;
 }
 
 .overlay.hidden {
   display: none;
 }
+
+
+.overlay .about-copy {
+  max-width: 90vw;     
+  color: white;
+  line-height: 1.8;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 
 .close-btn {
   margin-top: 2rem;
@@ -164,14 +175,9 @@ body, html {
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(0,0,0,0.5);
   text-align: center;
+  box-sizing: border-box;
 }
 
-.overlay .about-copy {
-  max-width: 700px;
-  color: white;
-  line-height: 1.8;
-  text-align: center;
-}
 
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
@@ -185,6 +191,7 @@ body, html {
   animation: bounce 2s infinite;
   text-decoration: none;
 }
+
 
 @media (max-width: 480px) {
   #main-content {
